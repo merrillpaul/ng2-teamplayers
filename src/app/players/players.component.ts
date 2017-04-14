@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Player } from './player';
+import { Player } from './dto';
+import { JsonMapper } from 'app/util/jsonmapper';
 
 @Component({
   selector: 'app-players',
@@ -16,18 +17,31 @@ export class PlayersComponent implements OnInit {
     this.players = ([
       {
         id: '1111',
-        name: 'Merrill',
-        age: 39
+        nameProp: 'Merrill',
+        age: 39,
+        strengths: [
+          {
+            type: 'Throwing'
+          },
+          {
+            type: 'Sparring'
+          }
+        ]
       },
       {
         id:'3333',
-        name: 'James',
+        nameProp: 'James',
+        age: 44
+      },
+      {
+        id:'33d33',
+        nameProp: 'Rachel',
         age: 44
       }
     ].map(it=> {
-      return new Player(it.id, it.name, it.age);
-    }));
-
+      return JsonMapper.deserialize(Player, it);
+    }));  
+    console.log(this.players);
   }
 
 }
