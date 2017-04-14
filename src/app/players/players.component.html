@@ -1,0 +1,28 @@
+<p>
+  players works!
+</p>
+
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Age</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let player of players">
+              <td>{{player.id}}</td>
+              <td>{{player.name}}</td>
+              <td>{{player.age}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
