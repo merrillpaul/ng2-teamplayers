@@ -1,5 +1,5 @@
 
-import { } from "reflect-metadata";
+import "reflect-metadata";
 export const jsonMetadataKey = "jsonProperty";
 export interface IJsonMetaData<T> {
     name?: string
@@ -52,7 +52,7 @@ export class JsonMapper {
         return Reflect.getMetadata(jsonMetadataKey, target, propertyKey);
     }
 
-    static deserialize<T>(clazz:{new(): T}, jsonObject) {
+    static deserialize<T>(clazz:{new(): T}, jsonObject) : T {
         if ((clazz === undefined) || (jsonObject === undefined)) return undefined;
         let obj = new clazz();
         Object.keys(obj).forEach((key) => {
