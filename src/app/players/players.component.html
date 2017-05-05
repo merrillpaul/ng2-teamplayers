@@ -16,7 +16,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let player of players">
+            <tr *ngFor="let player of players" (click)="setSelectedPlayer(player)">
               <td>{{player.id}}</td>
               <td>{{player.name}}</td>
               <td>{{player.age}}</td>
@@ -25,4 +25,16 @@
         </table>
       </div>
     </div>
+
+
   </div>
+  <div class="row">
+    <div class="col">
+      <app-player-detail [selectedPlayer]="selectedPlayer"></app-player-detail>
+    </div>
+
+  </div>
+  <p>
+    <a routerLink="/teams">Teams</a>
+  </p>
+</div>

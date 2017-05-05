@@ -15,7 +15,8 @@ const routes: Routes =
   },
   {
     path: '',
-    children: []
+    redirectTo: 'players',
+    pathMatch: 'full'
   }
 ];
 

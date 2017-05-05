@@ -1,0 +1,19 @@
+$trcolor: #94163f;
+.table-striped {
+    thead {
+        background: #045;
+        color: #fff;
+    }
+
+    tbody {
+        tr {
+            cursor: pointer;
+        }
+        tr:nth-of-type(odd) {
+            background: $trcolor;
+            &:hover {
+               background: lighten($trcolor, 10%);               
+            }
+        }
+    }
+}

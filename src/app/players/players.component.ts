@@ -11,6 +11,8 @@ export class PlayersComponent implements OnInit {
 
   private players: Player[];
 
+  private selectedPlayer: Player;
+
   constructor() { }
 
   ngOnInit() {
@@ -36,12 +38,21 @@ export class PlayersComponent implements OnInit {
       {
         id:'33d33',
         nameProp: 'Rachel',
-        age: 44
+        age: 7
+      },
+      {
+        id:'33d33',
+        nameProp: 'Pablo',
+        age: 9
       }
     ].map(it=> {
       return JsonMapper.deserialize(Player, it);
     }));  
     console.log(this.players);
+  }
+
+  setSelectedPlayer(player: Player) {
+    this.selectedPlayer = player;
   }
 
 }
